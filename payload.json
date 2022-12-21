@@ -1,10 +1,10 @@
 {
-  "canIpForward": true,
+  "canIpForward": false,
   "confidentialInstanceConfig": {
     "enableConfidentialCompute": false
   },
   "cpuPlatform": "Intel Broadwell",
-  "creationTimestamp": "2022-12-21T12:09:55.185-08:00",
+  "creationTimestamp": "2022-12-20T05:02:10.549-08:00",
   "deletionProtection": false,
   "description": "",
   "disks": [
@@ -25,9 +25,9 @@
       "licenses": [
         "projects/debian-cloud/global/licenses/debian-11-bullseye"
       ],
-      "deviceName": "slave3",
+      "deviceName": "slave1",
       "autoDelete": true,
-      "source": "projects/spark-372212/zones/europe-west1-b/disks/slave3",
+      "source": "projects/spark-372212/zones/europe-west1-b/disks/slave1",
       "index": 0,
       "boot": true,
       "kind": "compute#attachedDisk",
@@ -39,24 +39,29 @@
   "displayDevice": {
     "enableDisplay": false
   },
-  "fingerprint": "uA3f-pKi510=",
-  "id": "1433995579357058813",
+  "fingerprint": "DAgRx2MbNlg=",
+  "id": "6234584597448625342",
   "keyRevocationActionType": "STOP",
   "kind": "compute#instance",
   "labelFingerprint": "42WmSpB8rSM=",
-  "lastStartTimestamp": "2022-12-21T12:10:00.986-08:00",
+  "lastStartTimestamp": "2022-12-21T11:21:06.737-08:00",
+  "lastStopTimestamp": "2022-12-21T11:12:20.329-08:00",
   "machineType": "projects/spark-372212/zones/europe-west1-b/machineTypes/e2-medium",
   "metadata": {
-    "fingerprint": "Jgo4CXrNz1c=",
+    "fingerprint": "aPxDGT2ITqw=",
     "kind": "compute#metadata",
     "items": [
       {
-        "value": "apt update\ncurl --output spark.tgz https://dlcdn.apache.org/spark/spark-3.3.1/spark-3.3.1-bin-hadoop3.tgz\napt -y install default-jdk\ntar -xzvf spark.tgz\n./spark-3.3.1-bin-hadoop3/sbin/start-slave.sh\nspark://spark-master.europe-west1-b.c.spark-372212.internal:7077",
+        "value": "apt update\ncurl --output spark.tgz https://dlcdn.apache.org/spark/spark-3.3.1/spark-3.3.1-bin-hadoop3.tgz \napt -y install default-jdk\ntar -xzvf spark.tgz\n./spark-3.3.1-bin-hadoop3/sbin/start-slave.sh spark://spark-master.europe-west1-b.c.spark-372212.internal:7077",
         "key": "startup-script"
+      },
+      {
+        "value": "g7789um:ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBKDCe84zuL3UgnzCJZRnF8F3tvG+04tAR/ZQTvmKUBR60KzlQeGoNRMV6mmRoteVnpMQcLtFE03O76ittQIYwmc= google-ssh {\"userName\":\"7789um@gmail.com\",\"expireOn\":\"2022-12-21T19:11:26+0000\"}",
+        "key": "ssh-keys"
       }
     ]
   },
-  "name": "slave3",
+  "name": "slave1",
   "networkInterfaces": [
     {
       "stackType": "IPV4_ONLY",
@@ -66,14 +71,14 @@
         {
           "name": "External NAT",
           "type": "ONE_TO_ONE_NAT",
-          "natIP": "35.205.236.83",
+          "natIP": "34.76.104.232",
           "kind": "compute#accessConfig",
           "networkTier": "PREMIUM"
         }
       ],
       "subnetwork": "projects/spark-372212/regions/europe-west1/subnetworks/default",
-      "networkIP": "10.132.0.6",
-      "fingerprint": "n2-YbrTA9SM=",
+      "networkIP": "10.132.0.3",
+      "fingerprint": "ueGzMBpmoj4=",
       "kind": "compute#networkInterface"
     }
   ],
@@ -82,12 +87,13 @@
   },
   "resourceStatus": {},
   "scheduling": {
-    "onHostMaintenance": "MIGRATE",
-    "provisioningModel": "STANDARD",
-    "automaticRestart": true,
-    "preemptible": false
+    "onHostMaintenance": "TERMINATE",
+    "provisioningModel": "SPOT",
+    "automaticRestart": false,
+    "instanceTerminationAction": "STOP",
+    "preemptible": true
   },
-  "selfLink": "projects/spark-372212/zones/europe-west1-b/instances/slave3",
+  "selfLink": "projects/spark-372212/zones/europe-west1-b/instances/slave1",
   "serviceAccounts": [
     {
       "email": "508331843410-compute@developer.gserviceaccount.com",
