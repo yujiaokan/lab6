@@ -1,5 +1,5 @@
 {
-  "canIpForward": false,
+  "canIpForward": true,
   "confidentialInstanceConfig": {
     "enableConfidentialCompute": false
   },
