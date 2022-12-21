@@ -27,7 +27,7 @@
       ],
       "deviceName": "slave1",
       "autoDelete": true,
-      "source": "projects/spark-372212/zones/europe-west1-b/disks/slave4",
+      "source": "projects/spark-372212/zones/europe-west1-b/disks/slave1",
       "index": 0,
       "boot": true,
       "kind": "compute#attachedDisk",
